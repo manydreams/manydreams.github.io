@@ -594,6 +594,18 @@ header .go-back i {
     font-weight: 400;
 }
 
+/* input::-webkit-input-placeholder{
+    color: #34495e;
+} */
+
+input::placeholder{
+    color: #34495e;
+}
+
+textarea::placeholder{
+    color: #34495e;
+}
+
 /* @-webkit-keyframes rainbow {
 
     0%,
@@ -1859,7 +1871,7 @@ footer .copy-right {
 
 #searchModal .search-header .title {
     font-size: 1.6rem;
-    color: #333;
+    color: #34495e;
 }
 
 #searchResult {
