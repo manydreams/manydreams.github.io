@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>test</title>
+      <link href="/2023/10/17/test/"/>
+      <url>/2023/10/17/test/</url>
+      
+        <content type="html"><![CDATA[<h1 id="This-is-a-test-file"><a href="#This-is-a-test-file" class="headerlink" title="This is a test file"></a>This is a test file</h1><h2 id="This-is-a-test-file-1"><a href="#This-is-a-test-file-1" class="headerlink" title="This is a test file"></a>This is a test file</h2><h3 id="This-is-a-test-file-2"><a href="#This-is-a-test-file-2" class="headerlink" title="This is a test file"></a>This is a test file</h3><ul><li>This is a test file</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"this is a test file"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://blog.mikufans.online/BlogImage/2023-10/18/6.jpg" alt="image"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/10/16/hello-world/"/>
       <url>/2023/10/16/hello-world/</url>
