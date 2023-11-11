@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, linux,C,Assembler,汇编,Python,python3">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="关于使用MCDR与Velocity搭建生电群组服的过程与一些想法和问题, linux,C,Assembler,汇编,Python,python3">
+    <meta name="description" content="关于使用MCDR与Velocity搭建mc生电群组服的过程与一些想法和问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Mikufans Blog</title>
+    <title>关于使用MCDR与Velocity搭建生电群组服的过程与一些想法和问题 | Mikufans Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -318,12 +318,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/home.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://ooo.0x0.ooo/2023/11/11/Oerugj.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">关于使用MCDR与Velocity搭建生电群组服的过程与一些想法和问题</h1>
                 </div>
             </div>
         </div>
@@ -345,9 +345,21 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/minecraft/">
+                                <span class="chip bg-color">minecraft</span>
+                            </a>
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -359,7 +371,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-16
+                    2023-11-11
                 </div>
                 
 
@@ -368,7 +380,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    687
                 </div>
                 
 
@@ -388,19 +400,83 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为没有玩家以及服务器管理极其混乱等因素，我准备remake一个服务器！！！！！！</p>
+<p><font color="red">一个有多服务端的服务器！！！！！！！！！！</font></p>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>本文仅讲诉Ubuntu下MCJE 1.19.4的情况</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="你需要准备的"><a href="#你需要准备的" class="headerlink" title="你需要准备的"></a>你需要准备的</h3><ul>
+<li>一台合理配置的linux服务器<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">###以下是我的配置</span>
+CPU: 13900k
+RAM: 32G
+ROM：500G
+带宽: 50M 三线bgp
+<span class="token comment">###</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>可以访问外国服务器的网络<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">应该不用我多解释吧  <span class="token punctuation">(</span>。・ω・。<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>一个能读懂文档的大脑<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">连读文档都不会你来干嘛 ？ ？ ？ <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h3 id="关于服务器结构"><a href="#关于服务器结构" class="headerlink" title="关于服务器结构"></a>关于服务器结构</h3><p>服务器主要分为五个服务端</p>
+<p><img src="https://ooo.0x0.ooo/2023/11/11/OeeJMC.png" alt="服务器结构图"></p>
+<p>首先是代理服务器，这里选用的是velocity</p>
+<p>然后是ChatSync，用的MCDR里面的ChatBridge</p>
+<br>
+*就这么多，是不是很简单 ψ(｀∇´)ψ*
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="开始之前（配置环境）"><a href="#开始之前（配置环境）" class="headerlink" title="开始之前（配置环境）"></a>开始之前（配置环境）</h2><p>安装python,pip,venv,jre-17,curl以及screen</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> updata <span class="token operator">&amp;&amp;</span> <span class="token function">apt</span> upgrade <span class="token parameter variable">-y</span> <span class="token operator">&amp;&amp;</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">curl</span> openjdk-17-jre python3 python3-pip python3-venv <span class="token function">screen</span> <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>创建<code>/server</code>目录并创建和配置python虚拟环境</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> /server               <span class="token comment">#创建服务所在的目录</span>
+<span class="token builtin class-name">cd</span> /server                  <span class="token comment">#进入服务所在的目录</span>
+python3 <span class="token parameter variable">-m</span> venv ./venv      <span class="token comment">#创建python虚拟环境</span>
+<span class="token builtin class-name">source</span> ./venv/bin/activaty  <span class="token comment">#deactyvaty可以退出虚拟环境</span>
+pip3 mcdreforged            <span class="token comment">#安装MCDR到环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="开始部署服务端"><a href="#开始部署服务端" class="headerlink" title="开始部署服务端"></a>开始部署服务端</h2><h3 id="Velocity-Server"><a href="#Velocity-Server" class="headerlink" title="Velocity Server"></a>Velocity Server</h3><p>下载<a target="_blank" rel="noopener" href="https://papermc.io/software/velocity">velocity</a>到<code>/server/velocity</code>目录下</p>
+<p>配置和运行在此不过多赘述，请参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/307641494">这篇文章</a>或<a target="_blank" rel="noopener" href="https://docs.papermc.io/velocity">技术文档</a></p>
+<p><font color="red">注：若使用authlib-injector外置登录，代理端和服务端都需要加载authlib-injector</font></p>
+
+<h3 id="Survival-Server"><a href="#Survival-Server" class="headerlink" title="Survival Server"></a>Survival Server</h3><p>下载<a target="_blank" rel="noopener" href="https://fabricmc.net/use/server/">fabric服务端</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /server                  <span class="token comment">#进入上一步创建的目录</span>
+<span class="token function">curl</span> <span class="token parameter variable">-OJ</span> https://meta.fabricmc.net/v2/versions/loader/1.19.4/0.14.24/0.11.2/server/jar
+<span class="token comment">#此处仅做示例</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>因为我是使用littleskin作为登录服务，所以</p>
+<ul>
+<li>下载<a target="_blank" rel="noopener" href="https://github.com/yushijinhun/authlib-injector">authlib-injector</a>到<code>/server</code>目录</li>
+</ul>
+<p>下载<a target="_blank" rel="noopener" href="https://modrinth.com/mod/fabricproxy-lite">FabricProxy-Lite</a>到你配置好的<code>mods</code>文件夹</p>
+<p>配置基础服务</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> /survival                         <span class="token comment">#创建Survival Server所在的目录</span>
+<span class="token builtin class-name">cd</span> /survival                            <span class="token comment">#进入目录</span>
+<span class="token function">cp</span> path/to/your_fabric_server.jar ./    <span class="token comment">#e.g.  cp ../fabric-server.jar ./</span>
+<span class="token function">cp</span> path/to/authlib-injector.jar ./      <span class="token comment">#e.g.  cp ../authlib-injector.jar ./</span>
+<span class="token function">cp</span> <span class="token parameter variable">-rf</span> path/to/mods ./
+<span class="token function">java</span> <span class="token parameter variable">-jar</span> -javaagent:path/to/authlib-injector.jar<span class="token operator">=</span>https://littleskin.cn/api/yggdrasil <span class="token parameter variable">-Xms4G</span> <span class="token parameter variable">-Xmx8G</span> path/to/your_fabric_server.jar
+<span class="token comment">#启动后会自动为你下载服务端</span>
+<span class="token function">vim</span> start.sh                            <span class="token comment">#编写启动脚本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>启动脚本填入以下内容</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">java</span> <span class="token parameter variable">-jar</span> -javaagent:path/to/authlib-injector.jar<span class="token operator">=</span>https://littleskin.cn/api/yggdrasil <span class="token parameter variable">-Xms4G</span> <span class="token parameter variable">-Xmx8G</span> path/to/your_fabric_server.jar
+<span class="token comment"># :wq 保存并退出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>初始化MCDR，<a target="_blank" rel="noopener" href="https://mcdreforged.readthedocs.io/zh-cn/latest/quick_start.html">用户手册</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mcdreforged init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这里请根据需要自行调整配置</p>
+<p>调整服务器配置文件中<code>server-port</code>选项为<code>velocity.toml</code>中所对应的端口</p>
+<p>调整服务器配置文件中<code>online-mode</code>选项为<code>false</code></p>
+<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token key attr-name">server-port</span><span class="token punctuation">=</span><span class="token value attr-value">velocity-port</span>
+<span class="token key attr-name">online-mode</span><span class="token punctuation">=</span><span class="token value attr-value">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Creative-Server"><a href="#Creative-Server" class="headerlink" title="Creative Server"></a>Creative Server</h3><p>同Survival Server</p>
+<h3 id="Mirror-Server"><a href="#Mirror-Server" class="headerlink" title="Mirror Server"></a>Mirror Server</h3><p>同Survival Server</p>
+<h3 id="ChatBridge-Server"><a href="#ChatBridge-Server" class="headerlink" title="ChatBridge Server"></a>ChatBridge Server</h3><p>请参考<a target="_blank" rel="noopener" href="https://www.mcmod.cn/post/2677.html">这篇文章</a></p>
+<h2 id="作者想说"><a href="#作者想说" class="headerlink" title="作者想说"></a>作者想说</h2><p><font color="red">
+
+</font></p><p><font color="red">没事千万折腾<code>qq bot</code></font></p><font color="red">
+<p>没事千万折腾<code>qq bot</code></p>
+<p>没事千万折腾<code>qq bot</code></p>
+</font><p><font color="red"></font></p><p></p>
 
                 
             </div>
@@ -417,7 +493,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Damberva</a>
+                    <a href="/about" rel="external nofollow noreferrer">damberva</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -427,7 +503,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/10/16/hello-world/">http://example.com/2023/10/16/hello-world/</a>
+                    <a href="http://example.com/2023/11/10/%E5%85%B3%E4%BA%8E%E6%90%AD%E5%BB%BAmc%E7%94%9F%E7%94%B5%E7%BE%A4%E7%BB%84%E6%9C%8D%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%8E%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/">http://example.com/2023/11/10/%E5%85%B3%E4%BA%8E%E6%90%AD%E5%BB%BAmc%E7%94%9F%E7%94%B5%E7%BE%A4%E7%BB%84%E6%9C%8D%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%8E%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -440,7 +516,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Damberva</a>
+                    <a href="/about" target="_blank">damberva</a>
                     !
                 </span>
             </div>
@@ -464,7 +540,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                                <a href="/tags/minecraft/">
+                                    <span class="chip bg-color">minecraft</span>
+                                </a>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -772,45 +860,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/10/17/test/">
+                <a href="/2023/11/10/%E5%85%B3%E4%BA%8E%E6%90%AD%E5%BB%BAmc%E7%94%9F%E7%94%B5%E7%BE%A4%E7%BB%84%E6%9C%8D%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%8E%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/">
                     <div class="card-image">
                         
-                        <img src="https://ooo.0x0.ooo/2023/11/11/OeAj0F.jpg" class="responsive-img" alt="test">
+                        <img src="https://ooo.0x0.ooo/2023/11/11/Oerugj.png" class="responsive-img" alt="关于使用MCDR与Velocity搭建生电群组服的过程与一些想法和问题">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">关于使用MCDR与Velocity搭建生电群组服的过程与一些想法和问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            关于使用MCDR与Velocity搭建mc生电群组服的过程与一些想法和问题
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/blog%E6%B5%8B%E8%AF%95/" class="post-category">
-                                    blog测试
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            damberva
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">测试</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/minecraft/">
+                        <span class="chip bg-color">minecraft</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -821,37 +915,55 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/16/hello-world/">
+                <a href="/2023/10/17/%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E6%90%AD%E5%BB%BAblog/">
                     <div class="card-image">
                         
+                        <img src="https://ooo.0x0.ooo/2023/11/11/OeA2w6.png" class="responsive-img" alt="从零到一搭建blog">
                         
-                        <img src="/medias/featureimages/home.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">从零到一搭建blog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            这是一篇记录本站部署过程的blog
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-17
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Damberva
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/blog/" class="post-category">
+                                    blog
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/blog/">
+                        <span class="chip bg-color">blog</span>
+                    </a>
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
